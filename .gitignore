@@ -1,0 +1,11 @@
+.mypy_cache
+phdhelper.egg-info
+__pycache__
+htmlcov
+.coverage
+.python-version
+*.png
+.DS_Store
+*.csv
+*.jpeg
+.vscode
