@@ -36,13 +36,13 @@ class Colour:
         """Class returns shade 500."""
         return self.c500
 
-    def cmap(self) -> LinearSegmentedColormap:
+    def cmap(self, n: int = 256) -> LinearSegmentedColormap:
         """Return a matplotlib colormap with 256 shades."""
-        return LinearSegmentedColormap.from_list(self.name, self.colors, N=256)
+        return LinearSegmentedColormap.from_list(self.name, self.colors, N=n)
 
-    def get_shade(self, shade: int) -> tuple[int, int, int]:
+    def get_shade(self, shade: int, total: int) -> tuple[int, int, int]:
         """Get a shade in between the default set."""
-        return self.cmap()(shade / 1000)
+        return self.cmap(n=total)(shade / 1000)
 
 
 @dataclass
